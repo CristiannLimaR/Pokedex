@@ -1,4 +1,6 @@
-export const BuscarGif = ({handleGetPokemon}) => {
+import {useState} from "react"
+
+export const BuscarPokemon = ({handleGetPokemon}) => {
     const [pokemon, setPokemon] = useState("");
     
     return (
@@ -7,7 +9,7 @@ export const BuscarGif = ({handleGetPokemon}) => {
           <form
             className="d-flex"
             onSubmit={(e) => {
-              handleGetPokemon(pokemon, e);
+              handleGetPokemon(e, pokemon);
             }}
           >
             <input

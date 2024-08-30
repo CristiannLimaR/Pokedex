@@ -7,6 +7,7 @@ export const usePokemon =()=>{
         e.preventDefault()
         await reqPoke(pokemon).then((datosPokemon)=>{
             setDatosPokemon(datosPokemon)
+            console.log(datosPokemon)
         })
     }
 

@@ -1,24 +1,28 @@
 import React from "react";
-const name = "pikachu";
+
 export const reqPoke = async (pokemon) => {
   try {
-    const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`);
+    const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/snorlax/`);
     const data = await resp.json();
     const nombre = data.name
     const {stats} = data
     const {abilities} = data
-    console.log(data);
+    const {sprites} = data
+    const imagen = sprites.other['official-artwork'].front_default
 
-    const estadisticas = stats.map((stats)=>{
-        name: stats.stat.name
+    console.log(stats)
+    console.log(abilities)
+
+    const estadisticas = stats.map((stats)=>({
+        nombre: stats.stat.name,
         base: stats.base_stat
-    })
-
-    const hablidades = abilities.map((abilities)=>{
+    }))
+ 
+    const habilidades = abilities.map((abilities)=>({
         habilidad: abilities.ability.name
-    })
+    }))
 
-    const datosPokemon= [nombre,estadisticas,hablidades]
+    const datosPokemon= [nombre,estadisticas,habilidades,imagen]
 
     return datosPokemon
   } catch (error) {
