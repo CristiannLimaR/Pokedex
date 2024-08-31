@@ -7,5 +7,6 @@ import {PokedexApp} from './components/PokedexApp'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <PokedexApp/>
+    <h1>hola sdfsdfsdf</h1>
   </React.StrictMode>
 )
