@@ -5,7 +5,7 @@ export const BuscarPokemon = ({handleGetPokemon}) => {
     
     return (
       <>
-        <div className="conteiner d-flex flex-row justify-content-center align-items-center m-5">
+        <div className="container d-flex flex-row justify-content-center align-items-center mt-5">
           <form
             className="d-flex"
             onSubmit={(e) => {
